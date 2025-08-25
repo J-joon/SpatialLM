@@ -65,21 +65,11 @@ Tested with the following environment:
 
 ```bash
 # clone the repository
-git clone https://github.com/manycore-research/SpatialLM.git
-cd SpatialLM
+git clone https://github.com/manycore-research/SpatialLM.git $REPO_DIR
 
-# create a conda environment with cuda 12.4
-conda create -n spatiallm python=3.11
-conda activate spatiallm
-conda install -y -c nvidia/label/cuda-12.4.0 cuda-toolkit conda-forge::sparsehash
-
-# Install dependencies with poetry
-pip install poetry && poetry config virtualenvs.create false --local
-poetry install
-# SpatialLM1.0 dependency
-poe install-torchsparse # Building wheel for torchsparse will take a while
-# SpatialLM1.1 dependency
-poe install-sonata # Building wheel for flash-attn will take a while
+# in your workspace
+uv venv python --python 3.11
+uv pip install -e $REPO_DIR
 ```
 
 ### Inference
