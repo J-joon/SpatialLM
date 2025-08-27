@@ -66,6 +66,7 @@ Tested with the following environment:
 ```bash
 # clone the repository
 git clone https://github.com/manycore-research/SpatialLM.git $REPO_DIR
+export TORCH_CUDA_ARCH_LIST="9.0" # H100
 
 # in your workspace
 uv venv python --python 3.11
